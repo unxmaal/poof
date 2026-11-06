@@ -1,0 +1,25 @@
+<!doctype html>
+<meta http-equiv="Content-Security-Policy" content="style-src 'none'; script-src 'unsafe-inline'">
+<title>fixture</title>
+<body>
+<div class="app_HASH1" id="root-123456">
+  <button id="b-777" aria-label="Send a gift" class="btn_HASH2"><svg width="20" height="20"><rect width="20" height="20"/></svg></button>
+  <button aria-label="Super React" class="btn_HASH2">a</button>
+  <button aria-label="Super React" class="btn_HASH2">b</button>
+  <div class="bar_HASH3"><div class="promo_HASH4">promo</div><div class="other_HASH5">keep</div></div>
+  <div class="huge_HASH6">huge</div>
+</div>
+<script>
+  const place = (el, css) => (el.style.cssText = `position:fixed;${css}`);
+  document.body.style.margin = '0';
+  const [gift, a, b] = document.querySelectorAll('button');
+  place(gift, 'left:10px;top:10px;width:60px;height:30px');
+  place(a, 'left:100px;top:10px;width:60px;height:30px');
+  place(b, 'left:170px;top:10px;width:60px;height:30px');
+  place(document.querySelector('[class^="bar_"]'), 'left:10px;top:60px;width:300px;height:40px');
+  document.querySelector('[class^="promo_"]').style.cssText = 'width:100px;height:40px';
+  document.querySelector('[class^="other_"]').style.cssText = 'width:100px;height:40px';
+  place(document.querySelector('[class^="huge_"]'), 'left:0;top:120px;width:100vw;height:100vh');
+  window.clicks = 0;
+  document.addEventListener('click', () => window.clicks++);
+</script>

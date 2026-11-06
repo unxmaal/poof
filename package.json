@@ -1,0 +1,19 @@
+{
+  "name": "poof",
+  "version": "0.1.0",
+  "description": "Point-and-click element hiding for Electron apps",
+  "type": "module",
+  "bin": {
+    "poof": "bin/poof.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^45.2.3"
+  }
+}
