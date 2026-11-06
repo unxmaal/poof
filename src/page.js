@@ -28,11 +28,13 @@
     }
   };
   const quote = (v) => `"${v.replace(/["\\]/g, '\\$&')}"`;
-  const HASHED = /^(.+?[_-]{1,2})([0-9a-z]{5,8})$/i;
+  const HASHED = /^(.+?[_-]{1,2})([0-9a-zA-Z-]{5,8})$/;
+  const looksHashed = (prefix, hash) =>
+    /\d/.test(hash) || (prefix.endsWith("_") && /[a-z]/.test(hash) && /[A-Z]/.test(hash));
 
   const classPart = (c) => {
     const m = c.match(HASHED);
-    if (m && /\d/.test(m[2])) {
+    if (m && looksHashed(m[1], m[2])) {
       const p = quote(m[1]).slice(1, -1);
       return `:is([class^="${p}"],[class*=" ${p}"])`;
     }
