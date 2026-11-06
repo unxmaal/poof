@@ -10,7 +10,7 @@ import { Store } from '../src/store.js';
 
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const FIXTURE = fs.readFileSync(new URL('./fixture.html', import.meta.url), 'utf8');
-const HASHES = ['a1b2c3', 'd4e5f6', '0a1b2c', '3d4e5f', '6a7b8c', '9d0e1f'];
+const HASHES = ['a1b2c3', 'd4e5f6', '0a1b2c', 'TNyK-N', '6a7b8c', 'qZ-xWb'];
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 let dir, chrome, cdp, store, session, targetId, unwatch;
